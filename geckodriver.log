@@ -1,0 +1,208 @@
+1667079833645	geckodriver	INFO	Listening on 127.0.0.1:51541
+1667079836707	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51542" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileg52WM0"
+1667079837053	Marionette	INFO	Marionette enabled
+1667079837057	Marionette	INFO	Listening on port 51552
+WebDriver BiDi listening on ws://127.0.0.1:51542
+Read port: 51552
+1667079837277	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileg52WM0\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51542/devtools/browser/e0a88a5b-7695-434a-bc60-8b7430057e4a
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667079856089	Marionette	INFO	Stopped listening on port 51552
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1667079862864	geckodriver	INFO	Listening on 127.0.0.1:51821
+1667079865954	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51822" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileSWi9U1"
+1667079866274	Marionette	INFO	Marionette enabled
+1667079866277	Marionette	INFO	Listening on port 51834
+Read port: 51834
+WebDriver BiDi listening on ws://127.0.0.1:51822
+1667079866399	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileSWi9U1\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51822/devtools/browser/32c3643e-1ec3-4408-bf84-d3011e00d482
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667080042565	Marionette	INFO	Stopped listening on port 51834
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "53206" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofile31YpIL"
+1667079908946	Marionette	INFO	Marionette enabled
+1667079908950	Marionette	INFO	Listening on port 53217
+Read port: 53217
+WebDriver BiDi listening on ws://127.0.0.1:53206
+1667079909074	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofile31YpIL\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:53206/devtools/browser/9b84ce4a-a491-445c-a85b-ceef5161fb72
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667079924234	Marionette	INFO	Stopped listening on port 53217
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1667080015940	geckodriver	INFO	Listening on 127.0.0.1:57250
+1667080019043	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57251" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileMPSsjr"
+1667080019385	Marionette	INFO	Marionette enabled
+1667080019389	Marionette	INFO	Listening on port 57262
+WebDriver BiDi listening on ws://127.0.0.1:57251
+Read port: 57262
+1667080019609	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileMPSsjr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:57251/devtools/browser/8c925001-3f75-4724-9ba2-712dc78a4d29
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667080032170	Marionette	INFO	Stopped listening on port 57262
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1667080059067	geckodriver	INFO	Listening on 127.0.0.1:56086
+1667080062169	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56087" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileMQ1P6n"
+1667080062494	Marionette	INFO	Marionette enabled
+1667080062498	Marionette	INFO	Listening on port 56098
+Read port: 56098
+WebDriver BiDi listening on ws://127.0.0.1:56087
+1667080062616	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileMQ1P6n\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:56087/devtools/browser/21f90177-ef2b-4186-89f1-d90171871a43
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667080078338	Marionette	INFO	Stopped listening on port 56098
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1667080220432	geckodriver	INFO	Listening on 127.0.0.1:58694
+1667080223505	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58695" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileDJyg4a"
+1667080223843	Marionette	INFO	Marionette enabled
+1667080223847	Marionette	INFO	Listening on port 58706
+WebDriver BiDi listening on ws://127.0.0.1:58695
+Read port: 58706
+1667080224059	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileDJyg4a\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58695/devtools/browser/a1a11b86-c625-46b5-995e-6660db21eb34
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 593"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:593:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:126:18
+Line: 593, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 593: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1667080428367	Marionette	INFO	Stopped listening on port 58706
+[Parent 13516, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+nRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667080415350	Marionette	INFO	Stopped listening on port 51341
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1667080425445	geckodriver	INFO	Listening on 127.0.0.1:49234
+1667080428489	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49235" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofilewNEEF6"
+1667080429220	Marionette	INFO	Marionette enabled
+1667080429231	Marionette	INFO	Listening on port 49248
+Read port: 49248
+WebDriver BiDi listening on ws://127.0.0.1:49235
+1667080429454	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofilewNEEF6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49235/devtools/browser/3277d82d-6ed9-4c57-ad72-2a0ae4ac57a3
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667080472954	Marionette	INFO	Stopped listening on port 49248
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1667080481188	geckodriver	INFO	Listening on 127.0.0.1:49432
+1667080484259	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49433" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofile0thHgf"
+1667080484573	Marionette	INFO	Marionette enabled
+1667080484577	Marionette	INFO	Listening on port 49444
+Read port: 49444
+WebDriver BiDi listening on ws://127.0.0.1:49433
+1667080484697	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofile0thHgf\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49433/devtools/browser/6cd36e5b-532e-4cc2-8d73-6367e0b981cc
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 593"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:593:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:126:18
+Line: 593, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 593: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 576: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1667080523970	Marionette	INFO	Stopped listening on port 49444
+1667080524831	geckodriver	INFO	Listening on 127.0.0.1:54787
+1667080527910	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54788" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileeMqir6"
+1667080528225	Marionette	INFO	Marionette enabled
+1667080528229	Marionette	INFO	Listening on port 54799
+Read port: 54799
+WebDriver BiDi listening on ws://127.0.0.1:54788
+1667080528349	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofileeMqir6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54788/devtools/browser/a23ca6cf-cd4a-4e3c-a9ca-1664fcb443c4
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667080726675	Marionette	INFO	Stopped listening on port 54799
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "64867" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofilesY1Pqi"
+1667080618330	Marionette	INFO	Marionette enabled
+1667080618334	Marionette	INFO	Listening on port 64878
+Read port: 64878
+WebDriver BiDi listening on ws://127.0.0.1:64867
+1667080618457	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofilesY1Pqi\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64867/devtools/browser/bc69e5dc-9eb9-4b0d-8a3e-7a772de44b69
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667080748721	Marionette	INFO	Stopped listening on port 64878
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1667080751104	geckodriver	INFO	Listening on 127.0.0.1:55241
+1667080754163	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55242" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofile3znjYn"
+1667080754535	Marionette	INFO	Marionette enabled
+1667080754539	Marionette	INFO	Listening on port 55254
+Read port: 55254
+WebDriver BiDi listening on ws://127.0.0.1:55242
+1667080754660	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofile3znjYn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55242/devtools/browser/30f413cf-c8d9-49f6-a035-6f9dc327a686
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+SourceActor threw an exception: [Exception... "Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]"  nsresult: "0x80470002 (NS_BASE_STREAM_CLOSED)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: onResponse :: line 593"  data: no]
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:593:34
+onStopRequest@resource://gre/modules/NetUtil.jsm:126:18
+Line: 593, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 593: NS_BASE_STREAM_CLOSED: Component returned failure code: 0x80470002 (NS_BASE_STREAM_CLOSED) [nsIInputStream.available]
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1667080971997	Marionette	INFO	Stopped listening on port 55254
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 16672, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1667080997915	geckodriver	INFO	Listening on 127.0.0.1:58689
+1667081001004	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58690" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofilefl06C8"
+1667081001324	Marionette	INFO	Marionette enabled
+1667081001327	Marionette	INFO	Listening on port 58701
+Read port: 58701
+WebDriver BiDi listening on ws://127.0.0.1:58690
+1667081001450	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofilefl06C8\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:58690/devtools/browser/9812e2ed-6eb0-4a7e-90fd-e216e16a674d
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667081021578	Marionette	INFO	Stopped listening on port 58701
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 14420, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+1667081038469	geckodriver	INFO	Listening on 127.0.0.1:62438
+1667081041544	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62439" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofile5vixRV"
+1667081041883	Marionette	INFO	Marionette enabled
+1667081041887	Marionette	INFO	Listening on port 62450
+WebDriver BiDi listening on ws://127.0.0.1:62439
+Read port: 62450
+1667081042150	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\FIRAT\\AppData\\Local\\Temp\\rust_mozprofile5vixRV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62439/devtools/browser/8ae0a110-8025-4df9-89d0-ea700eddc9bf
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.trendyol.com."
+1667081097754	Marionette	INFO	Stopped listening on port 62450
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
