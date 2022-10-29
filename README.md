@@ -5,14 +5,14 @@ Bu projedeki amacım müşterimin isteği üzerine trendyol'a giren ve trendyold
 ## Proje İçin Gereksinimler:
 - Python3
 - Son Sürüm Mozilla Firefox
-- [Geckodriver] (https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-win64.zip)
+- [Geckodriver](https://github.com/mozilla/geckodriver/releases/download/v0.32.0/geckodriver-v0.32.0-win64.zip)
 - Selenium kütüphanesi
 
 ### Kurulumu:
 
 - Öncelikle bilgisayarınıza python 3.10'u indiriniz:
-[64-Bit] (https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
-[32-Bit] (https://www.python.org/ftp/python/3.10.7/python-3.10.7.exe)
+[64-Bit](https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
+[32-Bit](https://www.python.org/ftp/python/3.10.7/python-3.10.7.exe)
 - Ardından cmd'yi açıp aşağıdaki komudu yapıştırınız:
 
 pip install selenium
