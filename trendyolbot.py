@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 #Giriş bilgilerini almak için
-with open('girisbilgileri.txt', 'r', encoding='UTF-8') as file:
+with open('girisbilgileri.txt', 'r', encoding= 'UTF-8') as file:
     bilgiler = file.readlines()
     email = bilgiler[0].strip()
     sifre = bilgiler[1].strip()
@@ -41,20 +41,134 @@ passwordinput.send_keys(sifre)
 giris_yap = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div[3]/div[1]/form/button')
 giris_yap.click()
 time.sleep(5)
+#Koleksiyon eklemek için:
+
+favs = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[1]/div/div[2]/div/div/div[3]/div/div/div/a/div')
+favs.click()
+time.sleep(2)
+collections = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')
+collections.click()
+time.sleep(3)
+newcollection = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div/div[2]/div/div/button')
+newcollection.click()
+time.sleep(3)
+
+writer =  open('collections.txt', 'a', encoding= 'UTF-8')
+reader =  open('collections.txt', 'r', encoding= 'UTF-8')
+
+names = reader.readlines()
+
+reader.close()
+if len(names) == 0:
+    writer.writelines('1\n')
+    collection_name = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/div/div[2]/form/div[1]/div/input')
+    collection_name.send_keys('Koleksiyon 1')
+else:
+    collection_name = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/div/div[2]/form/div[1]/div/input')
+    collection_counter = int(names[-1]) + 1
+    collection_name_temp = 'Koleksiyon' + ' ' + str(collection_counter)
+    writer.writelines(str(collection_counter) + '\n')
+    collection_name.send_keys(collection_name_temp)
+writer.close()
+new_collection_button = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/div/div[2]/form/button')
+new_collection_button.click()
+time.sleep(3)
+close = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/a')
+close.click()
+time.sleep(2)
 
 #Sorguları aramak için döngü yapısı:
 for i in liste:
+    
     search = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[1]/div/div[2]/div/div/div[2]/div/div/div/input')
     search.clear()
     search.send_keys(i)
     search.send_keys(Keys.ENTER)
+    
+
+    
+    time.sleep(1)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+   
+        
+    try:
+        driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
+        driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
+        
+    except:
+        pass
+    
+    
+    
+    
+   
+    
+    try:
+        driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
+        driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
+        
+    except:
+        pass
+    driver.execute_script("window.scrollTo(0,0);")
     time.sleep(2)
     stars = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div[2]/div[2]/div/div/div/div[1]/div[1]/div/div/div[5]/div[1]/div[1]')
     stars.click()
     time.sleep(2)
+    
     threestarred = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div[2]/div[2]/div/div/div/div[1]/div[1]/div/div/div[5]/div[2]/a[1]/div[1]')
     threestarred.click()
+    
+    try:
+        driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
+        driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
+        
+    except:
+        pass
+    
     time.sleep(2)
+
     twostarred = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div[2]/div[2]/div/div/div/div[1]/div[1]/div/div/div[5]/div[2]/a[2]/div[1]')
     twostarred.click()
+    
+    try:
+        driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
+        driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
+        
+    except:
+        pass
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+    try:
+        driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
+        driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
+        
+        
+        
+    except:
+        pass
+    driver.execute_script('return document.getElementById("footer-container").remove();')
+        
+    driver.execute_script('return document.getElementById("marketing-internal-linking").remove();')
+    
+    SCROLL_PAUSE_TIME = 0.5
+
+# Get scroll height
+    last_height = driver.execute_script("return document.body.scrollHeight")
+
+    while True:
+    # Scroll down to bottom
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    # Wait to load page
+        time.sleep(SCROLL_PAUSE_TIME)
+
+    # Calculate new scroll height and compare with last scroll height
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break
+        last_height = new_height
+    products = driver.find_elements(by = By.CLASS_NAME , value="low-price-in-last-month with-basket")
+    for i in products:
+        i.send_keys(Keys.CONTROL + 't')
+        
+    driver.execute_script("window.scrollTo(0,0);")
     time.sleep(10)
