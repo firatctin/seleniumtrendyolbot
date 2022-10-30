@@ -11,8 +11,13 @@ Bu projedeki amacım müşterimin isteği üzerine trendyol'a giren ve trendyold
 ### Kurulumu:
 
 - Öncelikle bilgisayarınıza python 3.10'u indiriniz:
+
 [64-Bit](https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
+
 [32-Bit](https://www.python.org/ftp/python/3.10.7/python-3.10.7.exe)
+
+Python'u indirirken PATH'e eklemeyi unutmayınız.
+
 - Ardından cmd'yi açıp aşağıdaki komudu yapıştırınız:
 
 pip install selenium

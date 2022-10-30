@@ -90,7 +90,7 @@ for i in liste:
     time.sleep(1)
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
    
-        
+    time.sleep(1)
     try:
         driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
         driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
@@ -100,7 +100,7 @@ for i in liste:
     
     
     
-    
+    time.sleep(1)
    
     
     try:
@@ -151,24 +151,48 @@ for i in liste:
     
     SCROLL_PAUSE_TIME = 0.5
 
-# Get scroll height
+    #Aşağıya kaydırıp tüm ürünlerin yüklenmesi için gerekli olan algoritma:
     last_height = driver.execute_script("return document.body.scrollHeight")
 
     while True:
-    # Scroll down to bottom
+    
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-    # Wait to load page
+    
         time.sleep(SCROLL_PAUSE_TIME)
 
-    # Calculate new scroll height and compare with last scroll height
+    
         new_height = driver.execute_script("return document.body.scrollHeight")
         if new_height == last_height:
             break
         last_height = new_height
-    products = driver.find_elements(by = By.CLASS_NAME , value="low-price-in-last-month with-basket")
+    products = driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month with-basket"]]')
+    
     for i in products:
-        i.send_keys(Keys.CONTROL + 't')
         
+        query = i.find_element(By.XPATH, value = './child::a')
+        link = query.get_attribute('href')
+        tempdriver = webdriver.Firefox()
+        tempdriver.get(link)
+        time.sleep(2)
+        addtocollection = tempdriver.find_element(by = By.XPATH, value= '/html/body/div[1]/div[5]/main/div/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[5]/div')
+        addtocollection.click()
+        time.sleep(2)
+        login_input = tempdriver.find_element(by = By.XPATH, value= '//*[@id="login-email"]')
+        login_input.send_keys(email)
+        password_input = tempdriver.find_element(by = By.XPATH, value= '//*[@id="login-password-input"]')
+        password_input.send_keys(sifre)
+        login_button = tempdriver.find_element(by = By.XPATH, value= '//*[@id="q-primary q-fluid q-button-medium q-button submit"]')
+        login_button.click()
+        time.sleep(2)
+        tempdriver.execute_script('followers = document.querySelector(".pdp-add-to-collection-modal");')
+        add = tempdriver.find_element(by = By.XPATH, value= '/html/body/div[1]/div[5]/main/div[2]/div/div/div[2]/div/div/div[2]')
+        
+        add.click()
+        
+        
+        tempdriver.close()
+        
+       
     driver.execute_script("window.scrollTo(0,0);")
     time.sleep(10)
