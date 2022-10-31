@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+from selenium.webdriver.common.action_chains import ActionChains
 
 #Giriş bilgilerini almak için
 with open('girisbilgileri.txt', 'r', encoding= 'UTF-8') as file:
@@ -111,12 +112,17 @@ for i in liste:
         pass
     driver.execute_script("window.scrollTo(0,0);")
     time.sleep(2)
-    stars = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div[2]/div[2]/div/div/div/div[1]/div[1]/div/div/div[5]/div[1]/div[1]')
-    stars.click()
+    stars = driver.find_elements(by= By.XPATH, value= '//div[@class="fltr-cntnr-ttl-area"]')
+    for i in stars:
+        i.click()
+    
     time.sleep(2)
     
-    threestarred = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div[2]/div[2]/div/div/div/div[1]/div[1]/div/div/div[5]/div[2]/a[1]/div[1]')
-    threestarred.click()
+    try:
+        threestarred = driver.find_element(by= By.XPATH, value= "//*[contains(text(), 'Üç Yıldızlı Ürün')]")
+        threestarred.click()
+    except:
+        pass
     
     try:
         driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
@@ -126,9 +132,11 @@ for i in liste:
         pass
     
     time.sleep(2)
-
-    twostarred = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div[2]/div[2]/div/div/div/div[1]/div[1]/div/div/div[5]/div[2]/a[2]/div[1]')
-    twostarred.click()
+    try:
+        twostarred = driver.find_element(by= By.XPATH, value= "//*[contains(text(), 'İki Yıldızlı Ürün')]")
+        twostarred.click()
+    except:
+        pass
     
     try:
         driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
@@ -166,33 +174,35 @@ for i in liste:
         if new_height == last_height:
             break
         last_height = new_height
-    products = driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month with-basket"]]')
-    
-    for i in products:
+    products = driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month"]]')
+    if len(products) > 0:
+        for i in products:
+            
+            query = i.find_element(By.XPATH, value = './child::a')
+            
+            link = query.get_attribute('href')
+            driver.execute_script("window.open('');")
+            driver.switch_to.window(driver.window_handles[-1])
+            driver.get(link)
         
-        query = i.find_element(By.XPATH, value = './child::a')
-        link = query.get_attribute('href')
-        tempdriver = webdriver.Firefox()
-        tempdriver.get(link)
-        time.sleep(2)
-        addtocollection = tempdriver.find_element(by = By.XPATH, value= '/html/body/div[1]/div[5]/main/div/div[2]/div[1]/div[2]/div[2]/div[1]/div/div/div[5]/div')
-        addtocollection.click()
-        time.sleep(2)
-        login_input = tempdriver.find_element(by = By.XPATH, value= '//*[@id="login-email"]')
-        login_input.send_keys(email)
-        password_input = tempdriver.find_element(by = By.XPATH, value= '//*[@id="login-password-input"]')
-        password_input.send_keys(sifre)
-        login_button = tempdriver.find_element(by = By.XPATH, value= '//*[@id="q-primary q-fluid q-button-medium q-button submit"]')
-        login_button.click()
-        time.sleep(2)
-        tempdriver.execute_script('followers = document.querySelector(".pdp-add-to-collection-modal");')
-        add = tempdriver.find_element(by = By.XPATH, value= '/html/body/div[1]/div[5]/main/div[2]/div/div/div[2]/div/div/div[2]')
-        
-        add.click()
-        
-        
-        tempdriver.close()
-        
+            time.sleep(2)
+            addtocollection = driver.find_element(by = By.XPATH, value= '//div[@class="add-to-collection-button-wrapper"]')
+            addtocollection.click()
+            time.sleep(2)
+            
+            
+            driver.execute_script('followers = document.querySelector(".pdp-add-to-collection-modal");')
+            try:
+                add = driver.find_element(by = By.XPATH, value= '/html/body/div[1]/div[5]/main/div[2]/div/div/div[2]/div/div/div[2]')
+            
+                add.click()
+            except:
+                pass
+            driver.close()
+            driver.switch_to.window(driver.window_handles[0])
+            
+    else:
+        continue
        
     driver.execute_script("window.scrollTo(0,0);")
-    time.sleep(10)
+    
