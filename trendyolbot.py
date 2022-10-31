@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 
 #Giriş bilgilerini almak için
 with open('girisbilgileri.txt', 'r', encoding= 'UTF-8') as file:
@@ -24,7 +26,8 @@ print(liste)
 #Tarayıcının açılması için 
 driver = webdriver.Firefox() 
 driver.get('https://www.trendyol.com/')
-time.sleep(3)
+WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div[4]/div/div/div/div/div[1]')))
+
 #Başta gelen cinsiyet ekranını kapatmak için
 gender_pick = driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[3]/div[4]/div/div/div/div/div[1]')
 gender_pick.click()
@@ -34,6 +37,7 @@ login = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[1]/div/d
 login.click()
 
 #Emaili gireceğimiz yeri seçmek ve doldurmak için
+WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//*[@id="login-email"]')))
 
 emailinput = driver.find_element(by= By.XPATH, value= '//*[@id="login-email"]')
 emailinput.send_keys(email)
@@ -41,18 +45,19 @@ passwordinput = driver.find_element(by= By.XPATH, value= '//*[@id="login-passwor
 passwordinput.send_keys(sifre)
 giris_yap = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div[3]/div[1]/form/button')
 giris_yap.click()
-time.sleep(5)
-#Koleksiyon eklemek için:
 
+#Koleksiyon eklemek için:
+WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[1]/div/div[2]/div/div/div[3]/div/div/div/a/div')))
+time.sleep(1)
 favs = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[1]/div/div[2]/div/div/div[3]/div/div/div/a/div')
 favs.click()
-time.sleep(2)
+WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')))
 collections = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')
 collections.click()
-time.sleep(3)
+WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div/div[2]/div/div/button')))
 newcollection = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div/div[2]/div/div/button')
 newcollection.click()
-time.sleep(3)
+
 
 writer =  open('collections.txt', 'a', encoding= 'UTF-8')
 reader =  open('collections.txt', 'r', encoding= 'UTF-8')
@@ -60,11 +65,14 @@ reader =  open('collections.txt', 'r', encoding= 'UTF-8')
 names = reader.readlines()
 
 reader.close()
+time.sleep(1)
 if len(names) == 0:
+    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div/div/div[2]/form/div[1]/div/input')))
     writer.writelines('1\n')
     collection_name = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/div/div[2]/form/div[1]/div/input')
     collection_name.send_keys('Koleksiyon 1')
 else:
+    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div/div/div[2]/form/div[1]/div/input')))
     collection_name = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/div/div[2]/form/div[1]/div/input')
     collection_counter = int(names[-1]) + 1
     collection_name_temp = 'Koleksiyon' + ' ' + str(collection_counter)
@@ -73,19 +81,21 @@ else:
 writer.close()
 new_collection_button = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/div/div[2]/form/button')
 new_collection_button.click()
-time.sleep(3)
+time.sleep(0.7)
+WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div/a')))
+
 close = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/a')
 close.click()
-time.sleep(2)
+
 
 #Sorguları aramak için döngü yapısı:
 for i in liste:
-    
+    time.sleep(0.7)
     search = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[1]/div/div[2]/div/div/div[2]/div/div/div/input')
     search.clear()
     search.send_keys(i)
-    search.send_keys(Keys.ENTER)
     
+    search.send_keys(Keys.ENTER)
 
     
     time.sleep(1)
@@ -111,20 +121,23 @@ for i in liste:
     except:
         pass
     driver.execute_script("window.scrollTo(0,0);")
-    time.sleep(2)
+    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="fltr-cntnr-ttl-area"]')))
     stars = driver.find_elements(by= By.XPATH, value= '//div[@class="fltr-cntnr-ttl-area"]')
     for i in stars:
         i.click()
     
     time.sleep(2)
     
+    
     try:
+        
         threestarred = driver.find_element(by= By.XPATH, value= "//*[contains(text(), 'Üç Yıldızlı Ürün')]")
         threestarred.click()
     except:
         pass
     
     try:
+        
         driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
         driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
         
@@ -133,6 +146,7 @@ for i in liste:
     
     time.sleep(2)
     try:
+        
         twostarred = driver.find_element(by= By.XPATH, value= "//*[contains(text(), 'İki Yıldızlı Ürün')]")
         twostarred.click()
     except:
@@ -174,7 +188,10 @@ for i in liste:
         if new_height == last_height:
             break
         last_height = new_height
+    time.sleep(1)
     products = driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month"]]')
+    products.extend(driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month with-basket"]]'))
+    print(len(products))
     if len(products) > 0:
         for i in products:
             
@@ -185,14 +202,21 @@ for i in liste:
             driver.switch_to.window(driver.window_handles[-1])
             driver.get(link)
         
-            time.sleep(2)
-            addtocollection = driver.find_element(by = By.XPATH, value= '//div[@class="add-to-collection-button-wrapper"]')
-            addtocollection.click()
-            time.sleep(2)
-            
-            
-            driver.execute_script('followers = document.querySelector(".pdp-add-to-collection-modal");')
+            WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="add-to-collection-button-wrapper"]')))
             try:
+                addtocollection = driver.find_element(by = By.XPATH, value= '//div[@class="add-to-collection-button-wrapper"]')
+                
+                addtocollection.click()
+            
+            except:
+                pass
+            
+            try:    
+                driver.execute_script('followers = document.querySelector(".pdp-add-to-collection-modal");')
+            except:
+                pass
+            try:
+                WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="add-to-collection-button-wrapper"]')))
                 add = driver.find_element(by = By.XPATH, value= '/html/body/div[1]/div[5]/main/div[2]/div/div/div[2]/div/div/div[2]')
             
                 add.click()
