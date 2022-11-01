@@ -307,34 +307,54 @@ while True:
         #Aşağıya kaydırıp tüm ürünlerin yüklenmesi için gerekli olan algoritma:
         last_height = driver.execute_script("return document.body.scrollHeight")
         counter = 1
-        
-        if int(count_elements[3].rstrip("+")) >= 400 :
-            while counter < 16:
-        
-                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        boolean = True
+        try:
+            counter_2 = int(count_elements[3].rstrip("+"))
+        except:
+            boolean = False
+        if boolean == True:
+            if counter_2 >= 400 :
+                while counter < 16:
+            
+                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-        
-                time.sleep(SCROLL_PAUSE_TIME)
+            
+                    time.sleep(SCROLL_PAUSE_TIME)
 
-        
-                new_height = driver.execute_script("return document.body.scrollHeight")
-                if new_height == last_height:
-                    break
-                last_height = new_height
-                counter += 1
+            
+                    new_height = driver.execute_script("return document.body.scrollHeight")
+                    if new_height == last_height:
+                        break
+                    last_height = new_height
+                    counter += 1
+            else:
+                while True:
+            
+                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+            
+                    time.sleep(SCROLL_PAUSE_TIME)
+
+            
+                    new_height = driver.execute_script("return document.body.scrollHeight")
+                    if new_height == last_height:
+                        break
+                    last_height = new_height
         else:
-            while True:
-        
-                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            while counter <= 10:
+            
+                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-        
-                time.sleep(SCROLL_PAUSE_TIME)
+            
+                    time.sleep(SCROLL_PAUSE_TIME)
 
-        
-                new_height = driver.execute_script("return document.body.scrollHeight")
-                if new_height == last_height:
-                    break
-                last_height = new_height
+            
+                    new_height = driver.execute_script("return document.body.scrollHeight")
+                    if new_height == last_height:
+                        break
+                    last_height = new_height
+                    counter += 1
+            
         time.sleep(1)
         try:
             products = driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month"]]')
