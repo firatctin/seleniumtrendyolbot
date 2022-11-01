@@ -18,7 +18,8 @@ with open('cumle.txt', 'r', encoding='UTF-8') as file:
     liste = file.readlines()
     for i in liste:
         liste[liste.index(i)] = i.strip()
-
+while ('' in liste):
+    liste.remove('')
 print(liste)
 
     
@@ -51,9 +52,12 @@ WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.X
 time.sleep(1)
 favs = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[1]/div/div[2]/div/div/div[3]/div/div/div/a/div')
 favs.click()
+time.sleep(1)
 WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')))
+
 collections = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')
 collections.click()
+time.sleep(1)
 WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div/div[2]/div/div/button')))
 newcollection = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div/div[2]/div/div/button')
 newcollection.click()
@@ -90,12 +94,17 @@ close.click()
 
 #Sorguları aramak için döngü yapısı:
 for i in liste:
-    time.sleep(0.7)
-    search = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[1]/div/div[2]/div/div/div[2]/div/div/div/input')
-    search.clear()
-    search.send_keys(i)
-    
+    driver.get("https://www.trendyol.com/")
+    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//input[@class="vQI670rJ"]')))
+    try:
+        search = driver.find_element(by= By.XPATH, value= '//input[@class="vQI670rJ"]')
+        search.clear()
+        search.send_keys(i)
+    except:
+        continue
     search.send_keys(Keys.ENTER)
+    time.sleep(1)
+    
 
     
     time.sleep(1)
@@ -167,6 +176,14 @@ for i in liste:
         
     except:
         pass
+    count = driver.find_element(by= By.XPATH, value= '//div[@class="dscrptn"]')
+    count_elements = count.text.split(" ")
+    try:
+        
+        
+        count_elements[3] = count_elements[3].replace(".", "")
+    except:
+        pass
     driver.execute_script('return document.getElementById("footer-container").remove();')
         
     driver.execute_script('return document.getElementById("marketing-internal-linking").remove();')
@@ -175,23 +192,40 @@ for i in liste:
 
     #Aşağıya kaydırıp tüm ürünlerin yüklenmesi için gerekli olan algoritma:
     last_height = driver.execute_script("return document.body.scrollHeight")
-
-    while True:
+    counter = 1
     
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    if int(count_elements[3].rstrip("+")) >= 400:
+        while counter < 16:
+    
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
     
-        time.sleep(SCROLL_PAUSE_TIME)
+            time.sleep(SCROLL_PAUSE_TIME)
 
     
-        new_height = driver.execute_script("return document.body.scrollHeight")
-        if new_height == last_height:
-            break
-        last_height = new_height
+            new_height = driver.execute_script("return document.body.scrollHeight")
+            if new_height == last_height:
+                break
+            last_height = new_height
+            counter += 1
+    else:
+        while True:
+    
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    
+            time.sleep(SCROLL_PAUSE_TIME)
+
+    
+            new_height = driver.execute_script("return document.body.scrollHeight")
+            if new_height == last_height:
+                break
+            last_height = new_height
     time.sleep(1)
     products = driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month"]]')
     products.extend(driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month with-basket"]]'))
-    print(len(products))
+    if len(products) >30:
+        products = products[:30]
     if len(products) > 0:
         for i in products:
             
@@ -222,6 +256,7 @@ for i in liste:
                 add.click()
             except:
                 pass
+            time.sleep(0.2)
             driver.close()
             driver.switch_to.window(driver.window_handles[0])
             
