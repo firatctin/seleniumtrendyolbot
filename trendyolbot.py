@@ -22,15 +22,17 @@ while ('' in liste):
     liste.remove('')
 print(liste)
 
+
     
 while True:
     #Tarayıcının açılması için 
     driver = webdriver.Firefox() 
     driver.get('https://www.trendyol.com/')
-    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div[4]/div/div/div/div/div[1]')))
+    
 
     #Başta gelen cinsiyet ekranını kapatmak için
     try:
+        WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div[4]/div/div/div/div/div[1]')))
         gender_pick = driver.find_element(by=By.XPATH, value='/html/body/div[1]/div[3]/div[4]/div/div/div/div/div[1]')
         gender_pick.click()
     except:
@@ -54,8 +56,9 @@ while True:
             continue
 
     #Emaili gireceğimiz yeri seçmek ve doldurmak için
-    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//*[@id="login-email"]')))
+    
     try:
+        WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//*[@id="login-email"]')))
         emailinput = driver.find_element(by= By.XPATH, value= '//*[@id="login-email"]')
         emailinput.send_keys(email)
         passwordinput = driver.find_element(by= By.XPATH, value= '//*[@id="login-password-input"]')
@@ -75,9 +78,10 @@ while True:
             continue
 
     #Koleksiyon eklemek için:
-    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//a[@class="account-nav-item account-favorites"]')))
+    
     time.sleep(1)
     try:
+        WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//a[@class="account-nav-item account-favorites"]')))
         favs = driver.find_element(by= By.XPATH, value= '//a[@class="account-nav-item account-favorites"]')
         favs.click()
         
@@ -89,12 +93,12 @@ while True:
         except:
             continue
     time.sleep(1)
-    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')))
     try:
+        WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')))
         collections = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')
         collections.click()
         time.sleep(1)
-        WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="create-collection"]')))
+        WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="create-collection"]')))
         newcollection = driver.find_element(by= By.XPATH, value= '//div[@class="create-collection"]')
         newcollection.click()
     except:
@@ -103,7 +107,7 @@ while True:
             collections = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div[1]/a[2]')
             collections.click()
             time.sleep(1)
-            WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="create-collection"]')))
+            WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="create-collection"]')))
             newcollection = driver.find_element(by= By.XPATH, value= '//div[@class="create-collection"]')
             newcollection.click()
         except:
@@ -118,9 +122,10 @@ while True:
     reader.close()
     time.sleep(1)
     if len(names) == 0:
-        WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//input[@name="collectionName"]')))
+        
         writer.writelines('1\n')
         try:
+            WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//input[@name="collectionName"]')))
             collection_name = driver.find_element(by= By.XPATH, value= '//input[@name="collectionName"]')
             collection_name.send_keys('Koleksiyon 1')
         except:
@@ -131,8 +136,9 @@ while True:
             except:
                 continue
     else:
-        WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//input[@name="collectionName"]')))
+       
         try:
+            WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//input[@name="collectionName"]')))
             collection_name = driver.find_element(by= By.XPATH, value= '//input[@name="collectionName"]')
             collection_counter = int(names[-1]) + 1
             collection_name_temp = 'Koleksiyon' + ' ' + str(collection_counter)
@@ -160,8 +166,9 @@ while True:
         except:
             continue
     time.sleep(0.7)
-    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div/a')))
+    
     try:
+        WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'/html/body/div[1]/div[3]/div/div/div[1]/div/div/a')))
         close = driver.find_element(by= By.XPATH, value= '/html/body/div[1]/div[3]/div/div/div[1]/div/div/a')
         close.click()
     except:
@@ -172,7 +179,7 @@ while True:
     #Sorguları aramak için döngü yapısı:
     for i in liste:
         driver.get("https://www.trendyol.com/")
-        WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//input[@class="vQI670rJ"]')))
+        WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//input[@class="vQI670rJ"]')))
         try:
             search = driver.find_element(by= By.XPATH, value= '//input[@class="vQI670rJ"]')
             search.clear()
@@ -193,8 +200,14 @@ while True:
 
         
         time.sleep(1)
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
-    
+        try:
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+        except:
+            try:
+                time.sleep(2)
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+            except:
+                continue
         time.sleep(1)
         try:
             driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
@@ -213,22 +226,32 @@ while True:
             driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
             
         except:
+            
             pass
+        try:
+            driver.execute_script("window.scrollTo(0,0);")
+        except:
+            try:
+                time.sleep(2)
+                driver.execute_script("window.scrollTo(0,0);")
+            except:
+                continue
         
-        driver.execute_script("window.scrollTo(0,0);")
-        WebDriverWait(driver,50).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="fltr-cntnr-ttl-area"]')))
         
         try:
-            stars = driver.find_elements(by= By.XPATH, value= '//div[@class="fltr-cntnr-ttl-area"]')
+            WebDriverWait(driver,5).until(expected_conditions.element_to_be_clickable((By.XPATH,"//div[contains(text(), 'Yıldızlı Ürünler')]")))
+            stars = driver.find_element(by= By.XPATH, value= "//div[contains(text(), 'Yıldızlı Ürünler')]")
+            stars.click()
         except:
             try:
                 driver.execute_script("window.scrollTo(0,0);")
-                time.sleep(2)
-                stars = driver.find_elements(by= By.XPATH, value= '//div[@class="fltr-cntnr-ttl-area"]')
+                time.sleep(3)
+                stars = driver.find_element(by= By.XPATH, value= "//div[contains(text(), 'Yıldızlı Ürünler')]")
+                stars.click()
             except:
+                
                 continue
-        for i in stars:
-            i.click()
+        
         
         time.sleep(2)
         
@@ -273,7 +296,15 @@ while True:
             
         except:
             pass
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+        try:
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+        except:
+            try:
+                time.sleep(2)
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
+            except:
+                continue
+
         try:
             driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
             driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
@@ -298,62 +329,80 @@ while True:
             count_elements[3] = count_elements[3].replace(".", "")
         except:
             pass
-        driver.execute_script('return document.getElementById("footer-container").remove();')
-            
-        driver.execute_script('return document.getElementById("marketing-internal-linking").remove();')
-        
+        try:
+            driver.execute_script('return document.getElementById("footer-container").remove();')
+                
+            driver.execute_script('return document.getElementById("marketing-internal-linking").remove();')
+        except:
+            try:
+                time.sleep(2)
+                driver.execute_script('return document.getElementById("footer-container").remove();')
+                    
+                driver.execute_script('return document.getElementById("marketing-internal-linking").remove();')
+            except:
+                continue
         SCROLL_PAUSE_TIME = 0.5
 
         #Aşağıya kaydırıp tüm ürünlerin yüklenmesi için gerekli olan algoritma:
-        last_height = driver.execute_script("return document.body.scrollHeight")
-        counter = 1
-        boolean = True
         try:
-            counter_2 = int(count_elements[3].rstrip("+"))
+            last_height = driver.execute_script("return document.body.scrollHeight")
         except:
-            boolean = False
-        if boolean == True:
-            if counter_2 >= 400 :
+            try:
+                time.sleep(2)
+                last_height = driver.execute_script("return document.body.scrollHeight")
+            except:
+                continue
+        counter = 1
+        
+        
+        try:
+            while counter < 16:
+                
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+                
+                time.sleep(SCROLL_PAUSE_TIME)
+
+                
+                new_height = driver.execute_script("return document.body.scrollHeight")
+                try:
+                    driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
+                    driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
+            
+            
+            
+                except:
+                    pass
+                if new_height == last_height:
+                    break
+                last_height = new_height
+                counter += 1
+        except:
+            try:
+                time.sleep(2)
                 while counter < 16:
-            
+                    
                     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-            
+                    
                     time.sleep(SCROLL_PAUSE_TIME)
 
-            
+                    
                     new_height = driver.execute_script("return document.body.scrollHeight")
+                    try:
+                        driver.execute_script("return document.getElementsByClassName('popup')[0].remove();")
+                        driver.execute_script("return document.getElementsByClassName('overlay')[0].remove();")
+            
+            
+            
+                    except:
+                        pass
                     if new_height == last_height:
                         break
                     last_height = new_height
                     counter += 1
-            else:
-                while True:
-            
-                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
-            
-                    time.sleep(SCROLL_PAUSE_TIME)
-
-            
-                    new_height = driver.execute_script("return document.body.scrollHeight")
-                    if new_height == last_height:
-                        break
-                    last_height = new_height
-        else:
-            while counter <= 10:
-            
-                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-
-            
-                    time.sleep(SCROLL_PAUSE_TIME)
-
-            
-                    new_height = driver.execute_script("return document.body.scrollHeight")
-                    if new_height == last_height:
-                        break
-                    last_height = new_height
-                    counter += 1
+            except:
+                continue
             
         time.sleep(1)
         try:
@@ -361,8 +410,8 @@ while True:
             products.extend(driver.find_elements(by = By.XPATH , value='//div[@class="p-card-chldrn-cntnr card-border" and .//div[@class="low-price-in-last-month with-basket"]]'))
         except:
             continue
-        if len(products) >30:
-            products = products[:30]
+        if len(products) >10:
+            products = products[:10]
         if len(products) > 0:
             for i in products:
                 try:
@@ -378,21 +427,29 @@ while True:
                 except:
                     continue
             
-                WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="add-to-collection-button-wrapper"]')))
+                
                 try:
+                    WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="add-to-collection-button-wrapper"]')))
                     addtocollection = driver.find_element(by = By.XPATH, value= '//div[@class="add-to-collection-button-wrapper"]')
                     
                     addtocollection.click()
                 
                 except:
-                    pass
+                    try:
+                        time.sleep(1)
+                        WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="add-to-collection-button-wrapper"]')))
+                        addtocollection = driver.find_element(by = By.XPATH, value= '//div[@class="add-to-collection-button-wrapper"]')
+                    
+                        addtocollection.click()
+                    except:
+                        pass
                 
                 try:    
                     driver.execute_script('followers = document.querySelector(".pdp-add-to-collection-modal");')
                 except:
                     pass
                 try:
-                    WebDriverWait(driver,40).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="add-to-collection-button-wrapper"]')))
+                    WebDriverWait(driver,10).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@class="add-to-collection-button-wrapper"]')))
                     add = driver.find_element(by = By.XPATH, value= '/html/body/div[1]/div[5]/main/div[2]/div/div/div[2]/div/div/div[2]')
                 
                     add.click()
@@ -404,8 +461,13 @@ while True:
                 
         else:
             continue
-        
-        driver.execute_script("window.scrollTo(0,0);")
+        try:
+            driver.execute_script("window.scrollTo(0,0);")
+        except:
+            time.sleep(2)
+            driver.execute_script("window.scrollTo(0,0);")
+
         
     driver.close()
     break
+

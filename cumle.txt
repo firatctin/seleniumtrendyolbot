@@ -1,2 +1,1 @@
-kalem
-
+Her bir satıra bir tane gelecek şekilde arama sorgularınızı yazınız.
